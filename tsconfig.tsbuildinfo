@@ -302,7 +302,7 @@
         "signature": "091f417275a51ab3c47b949723e9e8a193012157ecc64a96e2d7b1505e82f395"
       },
       "./src/progress.ts": {
-        "version": "d8f4600a1a80288c5e979fb7b725acd1955f9a8828c2c2b5e609bf183de62ebb",
+        "version": "ff74f3257ab29f3ecb6f731249374a29767402121fdcf063083b8971d15c9999",
         "signature": "09d09908ab5e5284fb3656821eb02892696e57d3d392e8b4d7a17c31e52285c6"
       },
       "./src/progress.test.ts": {
@@ -1575,12 +1575,12 @@
       "./node_modules/@types/node/ts3.2/index.d.ts",
       "./node_modules/log-update/index.d.ts",
       "./node_modules/chalk/types/index.d.ts",
-      "./src/progress.ts",
+      "./src/progress.test.ts",
       "./node_modules/@types/jest-diff/index.d.ts",
       "./node_modules/jest-diff/build/types.d.ts",
       "./node_modules/jest-diff/build/index.d.ts",
       "./node_modules/@types/jest/index.d.ts",
-      "./src/progress.test.ts"
+      "./src/progress.ts"
     ]
   },
   "version": "3.6.4"

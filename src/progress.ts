@@ -40,7 +40,7 @@ export class MultiProgressInstance {
    * @param p
    */
   attachTo<T>(p: Promise<T>): MultiProgressInstance {
-    p.then(x => this.stop(false)).catch(x => this.stop(false));
+    p.then(x => this.stop()).catch(x => this.stop(false));
     return this;
   }
 
