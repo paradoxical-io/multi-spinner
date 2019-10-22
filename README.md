@@ -5,7 +5,7 @@ A simple multi spinner that allows you to dynamically add and remove spinners.
 # Install
 
 ```
-yarn add @paradoxical-io/multi-spinner
+yarn add paradox-multi-spinner
 ```
 
 ### Example

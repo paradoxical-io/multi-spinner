@@ -1,5 +1,5 @@
 {
-  "name": "@paradoxical-io/multi-spin",
+  "name": "paradox-multi-spinner",
   "version": "1.0.0",
   "description": "Multiple spin indicators",
   "main": "index.js",
