@@ -16,5 +16,7 @@
     "resolveJsonModule": true,
     "types": ["jest", "node"],
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "include": ["./src/"],
+  "exclude": ["./example/"]
 }

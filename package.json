@@ -7,8 +7,13 @@
   "author": "Anton Kropp",
   "license": "MIT",
   "scripts": {
-    "watch": "npx tsc -b -w"
+    "compile": "npx tsc -b",
+    "watch": "npx tsc -b -w",
+    "prepublish": "yarn compile"
   },
+  "files": [
+    "lib/"
+  ],
   "devDependencies": {
     "@types/jest": "^24.0.19",
     "@types/node": "^12.11.5",
