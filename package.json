@@ -1,6 +1,6 @@
 {
   "name": "paradox-multi-spinner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Multiple spin indicators",
   "main": "index.js",
   "repository": "https://github.com/paradoxical-io/multi-spinner",
