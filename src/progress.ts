@@ -10,6 +10,10 @@ export class MultiProgressInstance {
   private stopped = false;
   private success = false;
   private tick = 0;
+  private _completionMessage: string = "";
+  get completionMessage(): string {
+    return this._completionMessage;
+  }
 
   /**
    *
@@ -28,8 +32,14 @@ export class MultiProgressInstance {
   /**
    * Stops this handler, if success is false marks as an error
    * @param success
+   * @param completionMessage Option message to show on completion
    */
-  stop(success = true) {
+  stop(success = true, completionMessage?: string) {
+    this._completionMessage = completionMessage
+      ? completionMessage
+      : success
+      ? "OK"
+      : "ERROR";
     this.success = success;
     this.stopped = true;
   }
@@ -38,9 +48,15 @@ export class MultiProgressInstance {
    * Attaches this progress handler as a watcher onto the promise
    *
    * @param p
+   * @param completionMessage Option message to show on completion
    */
-  attachTo<T>(p: Promise<T>): MultiProgressInstance {
-    p.then(x => this.stop()).catch(x => this.stop(false));
+  attachTo<T>(
+    p: Promise<T>,
+    completionMessage?: string
+  ): MultiProgressInstance {
+    p.then(x => this.stop(true, completionMessage)).catch(x =>
+      this.stop(false, completionMessage)
+    );
     return this;
   }
 
@@ -120,7 +136,9 @@ export class MultiProgress {
 
     if (state) {
       return `${instance.message}: ${
-        state.success ? chalk.green("OK") : chalk.red("ERROR")
+        state.success
+          ? chalk.green(instance.completionMessage)
+          : chalk.red(instance.completionMessage)
       }`;
     } else {
       return `${instance.message} ${instance.nextFrame()}`;
